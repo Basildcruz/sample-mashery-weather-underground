@@ -20,8 +20,6 @@ Application Files
 * lib/*
 * xdk/*
 
-
-
 Copyright (c) 2012-2013, Intel Corporation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -49,7 +47,7 @@ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
 LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT 
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-jQuery Mobile
+INTEL'S APP FRAMEWORK
 -----------------------------------------------------------------------------
 * source:  Intel's App Framework - v2.1.0 - 2014-05-22
 * license: MIT X11 license
