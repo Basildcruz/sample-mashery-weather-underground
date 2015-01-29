@@ -1,83 +1,147 @@
 <!DOCTYPE html>
-<!--HTML5 doctype-->
 <html>
+    <!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
 
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
-		<title>Your New Application</title>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
-		<style type="text/css">
-			/* Prevent copy paste for all elements except text fields */
-			*  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
-			input, textarea  { -webkit-user-select:text; }
-		</style>
-		<script src="intelxdk.js"></script>
-		<script src="cordova.js"></script>
-        <script type="text/javascript">
-			function getStyleRuleValue(style, selector, sheet) {
-                var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets;
-                for (var i = 0, l = sheets.length; i < l; i++) {
-                    var sheet = sheets[i];
-                    if( !sheet.cssRules ) { continue; }
-                    for (var j = 0, k = sheet.cssRules.length; j < k; j++) {
-                        var rule = sheet.cssRules[j];
-                        if (rule.selectorText && rule.selectorText.split(',').indexOf(selector) !== -1) {
-                            return rule.style[style];
-                        }
-                    }
-                }
-                return null;
-            }
-            
-            
-            /*document.addEventListener("deviceready", onDeviceReady, false);
-            function onDeviceReady() {
-                if(device.platform == "iOS"){
-                    //If iOS device, remove upage CSS class from the mainpage to enable scrolling horizontal
-                    document.getElementById('mainpage').className="panel";
-                }
-                else if (device.platform.substr(0, 3) == "Win"){ //Windows phone
-                    //If Windows Phone Device, set the height and width to the device eight and width
-                    document.getElementById("webpage").style.height = window.innerHeight+"px";
-                }
-            }*/
-		</script>
-		<script src="xhr.js"></script>
-        <script src="js/main.js"></script>
-	</head>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/af.ui.min.css">
+        <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/icons.min.css">
+        <title>Blank App Designer Project Template</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
-	<body id="afui" onload="onDocLoad()">
+        <!--
+  * The "meta viewport" tag (below) helps your app size appropriately to a device's screen.
+  * Note that the meta viewport approach is being phased out in favor of the @viewport CSS rule.
+  * For a quick overview of both, see this article:
+  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
+  * To see what happens, try the app on a real device with and without a "meta viewport" tag.
+-->
 
-		<!-- content goes here-->
-		<div class="uwrap" id="content">
-			<div class="upage panel" id="mainpage" data-header="none" data-footer="none">
-				<div class="upage-outer">
-					<div class="upage-content" id="mainsub">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
 
-						<div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
-							<div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
-								<div class="widget-container content-area vertical-col">
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; zoom: 100% ; }                           @viewport { width: 100vw ; zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; }                                    @viewport { user-zoom: fixed ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
 
-									<div class="widget uib_w_1 d-margins iframe-size" data-uib="media/iframe" data-ver="0">
-										<iframe id="webpage" seamless="seamless" src="https://software.intel.com/en-us/html5/projects"></iframe>
-									</div><span class="uib_shim"></span>
-								</div>
-							</div>
-							<span class="uib_shim"></span>
-						</div>
-					</div>
-					<!-- /upage-content -->
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
 
-				</div>
-				<!-- /upage-outer -->
+        <!-- IMPORTANT: Do not include your weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
 
-			</div>
-			<!-- /upage -->
+        <!-- Most third-party libraries should go here. References (below) are just examples to give you the general idea... -->
+        <!-- <script src="lib/mc/hammer.js"></script> -->
+        <!-- <script src="lib/ft/fastclick.js"></script> -->
 
-		</div>
-		<!-- /uwrap -->
-	</body>
+        <script src="intelxdk.js"></script>
+        <!-- phantom library, needed for XDK "legacy" container api calls -->
+        <script src="cordova.js"></script>
+        <!-- phantom library, needed for Cordova api calls -->
+        <script src="xhr.js"></script>
+        <!-- phantom library, needed for XDK "legacy" container CORS -->
+
+        <script src="js/app.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <!--            
+            You may substitute jQuery for the App Framework selector library.
+            See http://app-framework-software.intel.com/documentation.php#afui/afui_jquery
+        -->
+        <script type="application/javascript" src="app_framework/2.1/appframework.js"></script>
+        <script type="application/javascript" src="app_framework/2.1/appframework.ui.js" data-ver="1"></script>
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="lib/underscore.min.js"></script>
+        <script type="application/javascript" src="lib/backbone.js"></script>
+        <script type="application/javascript" src="lib/Backbone.ModelBinder.min.js"></script>
+        <script type="application/javascript" src="xdk/ad/backbone_support.js"></script>
+        <script type="application/javascript" src="xdk/ad/jquery.ba-throttle-debounce.min.js"></script>
+        <script type="application/javascript" src="xdk/services/service-credentials.js"></script>
+        <script type="application/javascript" src="xdk/services/service-methods.js"></script>
+
+        <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="xdk/ad/af_subpage.js"></script>
+        <script type="application/javascript" src="xdk/ad/ad_events_data.js"></script>
+        <script type="application/javascript" src="js/index_drive_services.js"></script>
+        <script type="application/javascript" src="js/index_init_services.js"></script>
+        <script type="application/javascript" src="xdk/ad/index_setup_services.js"></script>
+    </head>
+
+    <body id="afui">
+
+        <!-- IMPORTANT: Do not include your weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+        <div id="content" class="uwrap">
+            <div class="upage panel" id="mainpage" data-header="none" data-footer="none">
+                <div class="upage-content content-area vertical-col left" id="uib_page_2">
+                    <div class="grid grid-pad urow uib_row_2 row-height-2" data-uib="layout/row" data-ver="0">
+                        <div class="col uib_col_4 col-0_6-12" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col">
+
+                                <div class="widget uib_w_7 scale-image d-margins" data-uib="media/img" data-ver="0">
+                                    <figure class="figure-align">
+                                        <img src="images/wundergroundLogo_4c.jpg">
+                                        <figcaption data-position="bottom"></figcaption>
+                                    </figure>
+                                </div><span class="uib_shim"></span>
+                            </div>
+                        </div>
+                        <div class="col uib_col_3 col-0_6-12" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col">
+
+                                <div class="widget uib_w_8 scale-image d-margins" data-uib="media/img" data-ver="0">
+                                    <figure class="figure-align">
+                                        <img src="images/masherymadelogo.png">
+                                        <figcaption data-position="bottom"></figcaption>
+                                    </figure>
+                                </div><span class="uib_shim"></span>
+                            </div>
+                        </div>
+                        <span class="uib_shim"></span>
+                    </div>
+                    <div class="widget uib_w_6 d-margins" data-uib="media/text" data-ver="0">
+                        <div class="widget-container left-receptacle"></div>
+                        <div class="widget-container right-receptacle"></div>
+                        <div>
+                            <p>This Weather Underground sample app provides weather forecast information using the Weather Underground API. Once a City, State or Zip Code is entered, click a day for the weather forecast indicated by a symbol and text description.</p>
+                            <p>&nbsp;</p>
+                            <p>Visit: http://www.wunderground.com/weather/api to get your free API key.</p>
+                        </div>
+                    </div>
+                    <div class="table-thing with-label widget uib_w_5 d-margins" data-uib="app_framework/input" data-ver="1" data-driving="[{'service':'weather1','identifier':'value','uib':'app_framework/input','field':'query','request_on_change':true}]">
+                        <label class="narrow-control label-inline">City, State or Zip Code</label>
+
+                        <input class="wide-control" type="text" placeholder="Los Angeles, CA">
+                    </div>
+                    <ul class="list widget uib_w_1 d-margins" data-uib="app_framework/listview" data-ver="1">
+                        <li class="widget uib_w_2 template" data-uib="app_framework/listitem" data-ver="1" data-sm="weather1" data-rpath=".forecast.txt_forecast.forecastday[]"><a>{{title}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="more-weather2" class="upage-content vertical-col left hidden">
+                    <div class="widget uib_w_3 scale-image d-margins template" data-uib="media/img" data-ver="0" data-sm="-- .uib_w_2" data-sc="single" data-rpath="(base)">
+                        <figure class="figure-align">
+                            <img src="{{icon_url}}">
+                            <figcaption data-position="bottom">{{title}} {{fcttext}}</figcaption>
+                        </figure>
+                    </div>
+                    <a class="button widget uib_w_4 d-margins" data-uib="app_framework/button" data-ver="1">Back</a>
+                </div>
+            </div>
+        </div>
+    </body>
 
 </html>
