@@ -1,13 +1,14 @@
 {
-"repoName":"sample-mashery-weather-underground",
+"reponame":"sample-mashery-weather-underground",
 "title":"Mashery WeatherUnderground API",
 "tooltip":"[App Designer Ready] This demo app provides a way to see the Weather Underground API in action.",
 "description":"[App Designer Ready] This demo app provides a way to see the Weather Underground API in action.",
-"articleUrl":"",
+"articleUrl":"TBD",
 "keywords":["Mashery", "App Framework", "App Designer", "Web Services API"],
 "visible" : "true",
 "apppreview":"false",
 "appname":"demo.masheryweatherunderground",
+"relname":"4.0.0",
 "type":"appdesigner",
 "projectTypeName": "com.intel.xdk.projecttype.webapp"
 }

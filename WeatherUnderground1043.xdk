@@ -2,12 +2,12 @@
   "project": {
     "projectSettingsVersion": "1.2",
     "creationData": {
-        "type": "App Designer",
-        "projectTypeName": "com.intel.xdk.projecttype.webapp",
-        "src": "appDesigner",
-        "projectGuid": "00000000-0000-0000-0000-000000000000",
-        "lastModifiedDate": 1418416808613,
-        "creationDate": 1418366631577
+      "type": "App Designer",
+			"projectTypeName": "com.intel.xdk.projecttype.webapp",
+      "src": "appDesigner",
+			"projectGuid": "00000000-0000-0000-0000-000000000000",
+      "lastModifiedDate": 1418416808613,
+      "creationDate": 1418366631577
     },
     "XDK-app-designer": "true",
     "sourceDirectory": "www",
@@ -536,6 +536,24 @@
         "crosswalkVersion_": "?",
         "appVersion_": "0.0.0.1",
         "appDescription_": ""
+      },
+      "WindowsPhone8": {
+        "platform_": "wp8",
+        "runtime_": "Cordova 3.x",
+        "name_": "WindowsPhone8",
+        "preferences_": {},
+        "isActive_": true,
+        "appName_": "WeatherUnderground1043",
+        "appID_": "xdk.intel.ad.project",
+        "appAccess_": "*",
+        "icons_": [],
+        "splashes_": [],
+        "iosProvs_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+				"cordovaCLIVersion_": "?",
+        "crosswalkVersion_": "?",
+        "appVersion_": "0.0.0.1"
       }
     }
   }

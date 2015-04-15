@@ -1,5 +1,4 @@
 /*
- * Copyright © 2012-2015, Intel Corporation. All rights reserved.
  * Please see the included README.md file for license terms and conditions.
  */
 
@@ -16,7 +15,7 @@ window.app = window.app || {} ;         // there should only be one of these...
 
 // Set to "true" if you want the console.log messages to appear.
 
-app.LOG = app.LOG || false ;
+app.LOG = false ;
 
 app.consoleLog = function() {           // only emits console.log messages if app.LOG != false
     if( app.LOG ) {
@@ -68,7 +67,6 @@ app.initEvents = function() {
 
     // NOTE: ...you can put other miscellaneous init stuff in this function...
     // NOTE: ...and add whatever else you want to do now that the app has started...
-    // NOTE: ...or create your own init handlers outside of this file that trigger off the "app.Ready" event...
 
     app.initDebug() ;           // just for debug, not required; keep it if you want it or get rid of it
     app.hideSplashScreen() ;    // after init is good time to remove splash screen; using a splash screen is optional
@@ -109,6 +107,7 @@ app.initDebug = function() {
 
     app.consoleLog(fName, "exit") ;
 } ;
+document.addEventListener("app.Ready", app.initDebug, false) ;
 
 
 

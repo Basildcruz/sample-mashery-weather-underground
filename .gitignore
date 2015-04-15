@@ -1,6 +1,7 @@
-intelxdk.config.*.xml
-!intelxdk.config.additions.xml
-*.mobileprovision
+intelxdk.config.android.xml
+intelxdk.config.crosswalk.xml
+intelxdk.config.ios.xml
+intelxdk.config.windows8.xml
 *.xdke
-[Tt]humbs.db
-.DS_Store
+*.mobileprovision
+*.DS_Store
